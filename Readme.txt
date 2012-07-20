@@ -1,0 +1,1 @@
+A simple plugin for PSP2 that automatically picks up items when you walk over them during missions.  Patches function responsible for handling button input.  Works on-the-fly so you don't have to do anything.

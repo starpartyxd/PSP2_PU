@@ -3,8 +3,6 @@
 #include <pspmodulemgr.h>
 #include <pspthreadman.h>
 #include <pspthreadman_kernel.h>
-#include <pspctrl.h>
-#include <string.h>
 
 PSP_MODULE_INFO("PSP2_PU", 0x3008, 1, 2);
 PSP_MAIN_THREAD_ATTR(0); 
@@ -20,7 +18,6 @@ unsigned int *p3 = (unsigned int) (0x088006fc);
 unsigned int *p4 = (unsigned int) (0x08800700);
 unsigned int *p6 = (unsigned int) (0x08800708);
 unsigned int *p7 = (unsigned int) (0x0880070c);
-unsigned int *p8 = (unsigned int) (0x08800710);
 unsigned int *p9 = (unsigned int) (0x08800714);
 unsigned int *p10 = (unsigned int) (0x08800718);
 unsigned int *p11 = (unsigned int) (0x0880071c);
@@ -48,8 +45,7 @@ void Function()
   *p4 = (unsigned int) (0x11000009);
   *p6 = (unsigned int) (0x21080824);
   *p7 = (unsigned int) (0x8d080000);
-  *p8 = (unsigned int) (0x34090001);
-  *p9 = (unsigned int) (0x15090004);
+  *p9 = (unsigned int) (0x11000004);
   *p10 = (unsigned int) (0x3c0b3410);
   *p11 = (unsigned int) (0x356b4000);
   *p12 = (unsigned int) (0xad4b0000);

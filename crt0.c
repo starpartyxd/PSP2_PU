@@ -73,7 +73,7 @@ void o_Function()
 	}
 	
 	/*
-	 * Stop and unload the module since we we're finished.
+	 * Stop and unload the module since we're finished.
 	 */
 	int status;
 	sceKernelStopUnloadSelfModule(0, NULL, &status, NULL);

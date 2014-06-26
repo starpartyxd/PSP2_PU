@@ -63,9 +63,8 @@ int findGame(void) {
 	sceIoRead(fd, gameID, 10);
 	sceIoClose(fd);
 	
-	if (gameID[0] != 0x00)
-		if(strcmp(gameID, "ULUS-10529"))
-			return -1;
+	if(strncmp(gameID, "ULUS-10529", 10))
+		return -1;
 			
 	return 0;
 }

@@ -65,9 +65,9 @@ int findGame(void) {
 	
 	if (gameID[0] != 0x00)
 		if(strcmp(gameID, "ULUS-10529"))
-			return 0;
+			return -1;
 			
-	return -1;
+	return 0;
 }
 
 /*

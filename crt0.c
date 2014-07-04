@@ -63,10 +63,10 @@ int findGame(void) {
 	sceIoRead(fd, gameID, 10);
 	sceIoClose(fd);
 	
-	if(strncmp(gameID, "ULUS-10529", 10))
-		return -1;
-			
-	return 0;
+	if(strncmp(gameID, "ULUS-10529", 10) == 0)
+		return 0;
+
+	return -1;
 }
 
 /*

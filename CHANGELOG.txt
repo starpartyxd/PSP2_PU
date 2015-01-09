@@ -1,7 +1,11 @@
 1.0
 ---------------
-*) Initial Release
+[+] Initial Release
 
 1.1
 ---------------
-*) Added error checking and self unloading
+[+] Added error checking and self unloading
+
+1.2
+---------------
+[!] Fixed bug which prevented it from working correctly.

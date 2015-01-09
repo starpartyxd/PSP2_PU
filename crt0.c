@@ -36,10 +36,8 @@ int module_stop(SceSize args, void *argp) __attribute__((alias("_stop")));
 
 SceUID thid;
 unsigned char gameID[10];
-unsigned int select[] = { 0x0923bcb4, 0x0923a204, 0x0923bca4, 0x0940c630,
-		0x970cefc, 0x097521dc };
 
-/*
+/**
  * Verifies that the game is running.
  */
 int findGame(void) {
@@ -63,16 +61,20 @@ void performPatch() {
 	int i = 0;
 	u32 final = 0;
 
+	// Checks to see if you're on a mission.
 	if (_lw(MISSION_ADDRESS) == 0) {
 		return;
 	}
 
-	if(_lw(BASE) == 0) {
+	// Also checks to see if you're on a mission.
+	if (_lw(BASE) == 0) {
 		return;
 	}
 
+	// Acquire the final item address.
 	final = _lw(BASE) + 0x824;
 
+	// Simple checks to see if you're standing on an item.
 	if (_lw(final) == 1) {
 		_sw(CONTROLLER_VALUE_NEW, CONTROLLER_ADDRESS);
 	} else {
@@ -80,27 +82,24 @@ void performPatch() {
 	}
 }
 
-/*
+/**
  * Main function that does the black magic.
  */
 void o_Function() {
 	int status = 0;
 
-	/*
-	 * Wait until it's completely booted.
-	 */
+	// Wait until it's completely booted.
 	sceKernelDelayThread(15000000);
 	while (!sceKernelFindModuleByName("sceKernelLibrary"))
 		sceKernelDelayThread(100000);
 
-	/*
-	 * First we want to confirm that the gameID is correct.
-	 */
+	// First we want to confirm that the gameID is correct.
 	if (findGame() == -1) {
 		sceKernelStopUnloadSelfModule(0, NULL, &status, NULL);
 		return;
 	}
 
+	// Do the loop-de-loop.
 	while (1) {
 		performPatch();
 		sceKernelDelayThread(1000);

@@ -1,0 +1,2 @@
+# PSP2_PU
+PSP2_PU is a simple plugin for PSP2 (Phantasy Star Portable 2), which is a game for the Playstation Portable. It automatically picks up items when you walk over them during missions. It patches the function responsible for handling button input and it works on the fly so you don't have to do anything.

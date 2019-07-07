@@ -1,1 +1,0 @@
-A simple plugin for PSP2 (Phantasy Star Portable 2) that automatically picks up items when you walk over them during missions.  It patches the function responsible for handling button input and it works on the fly so you don't have to do anything.
